@@ -12,9 +12,9 @@
 <%
 String token=(String)session.getAttribute("token");
 ArrayList<Dati> studenti = new ArrayList<Dati>();
-
-int i=(int)session.getAttribute("indice");
+int i=0;
 if(token=="True"){
+	i=(int)session.getAttribute("indice");
 	studenti=(ArrayList<Dati>)session.getAttribute("studenti");
 	String nome=request.getParameter("Name");
 	String cognome=request.getParameter("Surname");
@@ -33,7 +33,6 @@ if(token=="True"){
 				studenti.add(dati2);
 				break;
 			
-
 			case 3:
 				Dati dati3=new Dati(nome,cognome,dataN,indirizzo,citta,codiceF);
 				studenti.add(dati3);
