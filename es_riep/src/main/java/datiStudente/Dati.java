@@ -16,8 +16,8 @@ public class Dati {
 
 	public Dati(String nome, String cognome, String dataN, String indirizzo, String citta, String codiceF) {
 		super();
-		Nome = nome;
-		Cognome = cognome;
+		this.Nome = nome;
+		this.Cognome = cognome;
 		this.dataN = dataN;
 		this.indirizzo = indirizzo;
 		this.citta = citta;

@@ -36,15 +36,18 @@ if(token=="True"){
 			case 3:
 				Dati dati3=new Dati(nome,cognome,dataN,indirizzo,citta,codiceF);
 				studenti.add(dati3);
-				break;
-				
+				break;	
+			default:
 		}
 	session.setAttribute("studenti",studenti);
 	session.setAttribute("indice",i+1);
+}else{ 
+	session.setAttribute("studenti",studenti);
+	session.setAttribute("indice", 1);
 }
 %>
 <h3>Vuoi inserire i dati di un nuovo studente?</h3>
-<% if (i<=3){ %>
+<% if (i<3){ %>
 	<a href="formDatiUtente.jsp">Clicca qui!</a>
 <% }else{ %>
 	<b>Hai raggiunto il numero massimo di studenti che puoi inserire!</b>
@@ -52,9 +55,10 @@ if(token=="True"){
 
 <% if (i>0){
 	  for(Dati j : studenti){%>
+	  <hr>
 		 <div class="card">
   			<div class="container">
-    			<h4><%=j.getNome() %> <%=j.getCognome() %></h4>
+    			<p><b>Nome: </b><%=j.getNome() %> <b>Cognome: </b><%=j.getCognome() %></p>
     			<p><b>Data di nascita:</b><%=j.getDataN() %></p>
     			<p><b>Indirizzo:</b><%=j.getIndirizzo() %></p>
     			<p><b>Citta:</b><%=j.getCitta() %></p>
@@ -62,11 +66,8 @@ if(token=="True"){
   			</div>
 		 </div>
 	  <%}
-		  
-	}else{ 
-		session.setAttribute("indice", 1);
-   }
-%>
+	  
+}%>
 </body>
 </html>
 

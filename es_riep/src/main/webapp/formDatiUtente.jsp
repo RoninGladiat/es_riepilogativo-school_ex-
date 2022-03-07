@@ -7,6 +7,7 @@
 <title>Es Riepilogativo</title>
 </head>
 <body>
+<h2>Inserisci qui i dati dello studente!</h2>
 <%
 session.setAttribute("token","True");
 %>
