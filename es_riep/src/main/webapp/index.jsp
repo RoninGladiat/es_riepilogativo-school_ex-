@@ -22,23 +22,10 @@ if(token=="True"){
 	String indirizzo=request.getParameter("indirizzo");
 	String citta=request.getParameter("citta");
 	String codiceF=request.getParameter("codiceF");
-		switch(i){
-			case 1:
-				Dati dati1=new Dati(nome,cognome,dataN,indirizzo,citta,codiceF);
-				studenti.add(dati1);
-				break;
-
-			case 2:
-				Dati dati2=new Dati(nome,cognome,dataN,indirizzo,citta,codiceF);
-				studenti.add(dati2);
-				break;
-			
-			case 3:
-				Dati dati3=new Dati(nome,cognome,dataN,indirizzo,citta,codiceF);
-				studenti.add(dati3);
-				break;	
-			default:
-		}
+	studenti.add(new Dati(nome,cognome,dataN,indirizzo,citta,codiceF));
+	
+	Collections.sort(studenti);
+	Iterator iterator = studenti.iterator();
 	session.setAttribute("studenti",studenti);
 	session.setAttribute("indice",i+1);
 }else{ 

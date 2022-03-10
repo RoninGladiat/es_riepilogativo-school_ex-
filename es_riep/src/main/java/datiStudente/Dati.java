@@ -1,6 +1,6 @@
 package datiStudente;
 
-public class Dati {
+public class Dati implements Comparable{
 	
 	private String Nome; 
 	private String Cognome; 
@@ -70,6 +70,13 @@ public class Dati {
 
 	public void setCodiceF(String codiceF) {
 		this.codiceF = codiceF;
+	}
+
+	@Override
+	public int compareTo(Object obj) {
+		// TODO Auto-generated method stub
+		Dati studente = (Dati)obj;
+		return (this.Nome).compareTo(studente.Nome);
 	} 
 	
 	
