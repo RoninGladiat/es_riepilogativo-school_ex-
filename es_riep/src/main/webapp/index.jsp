@@ -25,7 +25,6 @@ if(token=="True"){
 	studenti.add(new Dati(nome,cognome,dataN,indirizzo,citta,codiceF));
 	
 	Collections.sort(studenti);
-	Iterator iterator = studenti.iterator();
 	session.setAttribute("studenti",studenti);
 	session.setAttribute("indice",i+1);
 }else{ 
